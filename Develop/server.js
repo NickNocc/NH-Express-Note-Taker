@@ -33,6 +33,15 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'))
 });
 
+app.delete('/api/notes/:id', (req, res) => {
+    let notes2 = notes.noteArray;
+    const itemIndex = notes2.findIndex(({ id }) => id === req.params.id);
+    if (itemIndex >= 0) {
+      notes.noteArray.splice(itemIndex, 1);
+    }
+    res.send(`${req} has been deleted`);
+})
+
 app.listen(PORT, () => {
   console.log(`API server now on port ${PORT}!`);
 });

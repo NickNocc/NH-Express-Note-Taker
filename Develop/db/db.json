@@ -1,19 +1,9 @@
 {
   "noteArray": [
     {
-      "title": "Test Title",
-      "text": "Test text",
-      "id": "0"
-    },
-    {
       "title": "Test Test",
       "text": "Test Test",
       "id": "1"
-    },
-    {
-      "title": "1111",
-      "text": "1111",
-      "id": "2"
     },
     {
       "title": "2222",
@@ -24,6 +14,11 @@
       "title": "3333",
       "text": "3333",
       "id": "4"
+    },
+    {
+      "title": "ez",
+      "text": "clap",
+      "id": "3"
     }
   ]
 }
