@@ -1,7 +1,10 @@
 const express = require('express');
-
+const { createNewNote } = require('./lib/notes');
+const notes = require('./db/db.json');
 const PORT = process.env.PORT || 3001;
 const app = express();
+const path = require('path');
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -22,11 +25,11 @@ app.post('/api/notes', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../public/index.html'))
+    res.sendFile(path.join(__dirname, '/public/index.html'))
 });
 
 app.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../public/notes.html'))
+    res.sendFile(path.join(__dirname, '/public/notes.html'))
 });
 
 app.listen(PORT, () => {
