@@ -12,24 +12,25 @@ app.use(express.static('public'));
 
 // Get api notes
 app.get('/api/notes', (req, res) => {
-    let results = notes;
+    let results = notes.noteArray;
     res.json(results);
 });
 // Post notes to database
 app.post('/api/notes', (req, res) => {
-    req.body.id = notes.length.toString();
-    console.log(req.body);
+    let notes2 = notes.noteArray;
+    req.body.id = notes2.length.toString();
     // Need a function to turn the info into a an object
-    const newNote = createNewNote(req.body, notes);
+    const newNote = createNewNote(req.body, notes2);
     res.json(newNote);
+});
+
+
+app.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/notes.html'))
 });
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'))
-});
-
-app.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/notes.html'))
 });
 
 app.listen(PORT, () => {
