@@ -1,5 +1,7 @@
 const express = require('express');
+// Importing function from other file
 const { createNewNote } = require('./lib/notes');
+// Importing database
 const notes = require('./db/db.json');
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -24,15 +26,15 @@ app.post('/api/notes', (req, res) => {
     res.json(newNote);
 });
 
-
+// Brings to notes page
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/notes.html'))
 });
-
+// Wildcard to redirect if the wrong query is inputted
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'))
 });
-
+// Deletes notes by finding the note's id then splicing it from the database array
 app.delete('/api/notes/:id', (req, res) => {
     let notes2 = notes.noteArray;
     const itemIndex = notes2.findIndex(({ id }) => id === req.params.id);
