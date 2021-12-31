@@ -1,24 +1,19 @@
 {
   "noteArray": [
     {
-      "title": "Test Test",
-      "text": "Test Test",
+      "title": "Chore",
+      "text": "Dishes",
+      "id": "0"
+    },
+    {
+      "title": "Chore",
+      "text": "Clean table",
       "id": "1"
     },
     {
-      "title": "2222",
-      "text": "2222",
-      "id": "3"
-    },
-    {
-      "title": "3333",
-      "text": "3333",
-      "id": "4"
-    },
-    {
-      "title": "ez",
-      "text": "clap",
-      "id": "3"
+      "title": "Chore",
+      "text": "Wash Cat",
+      "id": "2"
     }
   ]
 }
