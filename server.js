@@ -34,7 +34,7 @@ app.get('/notes', (req, res) => {
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'))
 });
-// Deletes notes by finding the note's id then splicing it from the database array
+// Deletes notes by finding the note's id then splicing it from the database array 12
 app.delete('/api/notes/:id', (req, res) => {
     let notes2 = notes.noteArray;
     const itemIndex = notes2.findIndex(({ id }) => id === req.params.id);
